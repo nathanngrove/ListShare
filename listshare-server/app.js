@@ -8,13 +8,11 @@ const app = express();
 //Import routes
 const usersRoute = require('./routes/users');
 const listsRoute = require('./routes/lists');
-const itemsRoute = require('./routes/items');
 
 //Middlewares
 app.use(express.json());
 app.use(cors());
 app.use('/lists', listsRoute);
-app.use('/items', itemsRoute);
 app.use('/users', usersRoute);
 
 app.get('/', (req,res) => {
